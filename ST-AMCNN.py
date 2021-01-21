@@ -180,9 +180,9 @@ class SiameseNetwork(nn.Module):
                 m.bias.data.zero_()
 
     def forward(self, input1, input2):
-        input2 = self.stn(input2) #localization后的整张图片
-        output1,feature1,feature2,feature3,feature4,feature5,feature6 = self.forward_once(input1) #传入比较的指纹1
-        output2,feature1_1,feature2_2,feature3_3,feature4_4,feature5_5,feature6_6 = self.forward_once(input2) #传入比较的指纹2 
+        input2 = self.stn(input2) 
+        output1,feature1,feature2,feature3,feature4,feature5,feature6 = self.forward_once(input1) 
+        output2,feature1_1,feature2_2,feature3_3,feature4_4,feature5_5,feature6_6 = self.forward_once(input2) 
         return input2,output1, output2,feature1,feature2,feature3,feature4,feature5,feature6,feature1_1,feature2_2,feature3_3,feature4_4,feature5_5,feature6_6
     
 
@@ -205,7 +205,7 @@ path_2 = "images/"+str(args.number2)+'.png'
 def read(path):
     image = cv2.imread(path).astype(np.float)/255.
     image = cv2.resize(image,(156,156))
-    image_show = image[:,:,::-1]  # RGB转BGR
+    image_show = image[:,:,::-1]  # RGB transfers to BGR
     image = (image - np.array([0.485, 0.456, 0.406])) / np.array([0.229, 0.224, 0.225]) # same as the training transformer, not a mistake
     return image, image_show
 
