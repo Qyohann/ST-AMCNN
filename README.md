@@ -18,5 +18,6 @@ Here is the test model for demonstration. This code is implemented by Python. Wh
     - You will see the visualized comparsion results, The redder areas indicated this part of poses is highly matched and obtained high score between the learner’s pose and         standard pose.
 0.  For different pose images matching : Run `python ST-AMCNN.py 1 3` or `python ST-AMCNN.py 2 4` to test demo images provided in `images/`.
     - You will see there are few comparative results because the input poses are totally different. The model cannot give the suggestion for rectification.
-
+0.  For benchmarking, ST-ResNet-18 and ST-VGG-16 also can be run: Run `python ST-ResNet-18.py 1 2` or `python ST-VGG-16.py 1 2` to test demo images provided in `images/`.
+    - You will see the wrong matching results there. These two models cannot give the suggestion for rectification.
 
